@@ -1,3 +1,10 @@
+/*
+** PERSONAL PROJECT, 2019
+** factorial_computer
+** File description:
+** main factorial computer
+*/
+
 #include <stdio.h>
 #include "my.h"
 
