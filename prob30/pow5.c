@@ -1,8 +1,8 @@
 /*
 ** PERSONAL PROJECT, 2019
-** factorial_computer
+** power_computer
 ** File description:
-** main factorial computer
+** main power computer
 */
 
 #include <stdio.h>
