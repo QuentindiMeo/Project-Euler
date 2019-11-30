@@ -27,6 +27,6 @@ int main(void)
             res += i;
         }
     }
-    printf("\nresult = %i\n", res);
+    printf("\nResult  = %i\n", res);
     return (0);
 }
