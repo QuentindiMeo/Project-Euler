@@ -1,8 +1,8 @@
 /*
 ** PERSONAL PROJECT, 2019
-** summult
+** smallest
 ** File description:
-** main summult
+** main smallest
 */
 
 #include <stdio.h>
