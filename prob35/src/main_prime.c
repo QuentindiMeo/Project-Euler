@@ -5,7 +5,6 @@
 ** main prime computer
 */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "../include/my.h"
