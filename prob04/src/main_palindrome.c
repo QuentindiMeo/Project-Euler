@@ -1,12 +1,10 @@
 /*
 ** PERSONAL PROJECT, 2019
-** summult
+** palindrome
 ** File description:
-** main summult
+** main palindrome
 */
 
-#include <unistd.h>
-#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "../include/my.h"
