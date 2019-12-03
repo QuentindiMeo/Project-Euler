@@ -10,7 +10,7 @@
 
 int main(void)
 {
-    for (uint a = 1; a < 999; a++)
+    for (uint a = 1; a < 333; a++)
         for (uint b = 2; b < 999; b++)
             for (uint c = 3; c < 999; c++) {
                 if (a * a + b * b == c * c && a + b + c == 1000) {
