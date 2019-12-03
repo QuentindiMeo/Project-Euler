@@ -15,6 +15,7 @@ int main(void)
 {
     long res = 0;
 
+    printf("This solution takes around 11 minutes...\n");
     for (int nb = 2000000; nb > 1; nb--)
         if (my_is_prime(nb))
             res += nb;
