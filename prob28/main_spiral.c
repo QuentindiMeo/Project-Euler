@@ -29,12 +29,12 @@ int main(int ac, char **av)
 
     if (ac != 2) {
         printf("USAGE\n\t%s [0 < size < 1000]\n", av[0]);
-        printf("\t'size' gives a spiral of side length 'size * 2 - 1'\n");
+        printf("\t'size' gives a (2*size-1) by (2*size-1) spiral\n");
         return (FAILURE);
     }
     if (my_atoi(av[1]) <= 0 || my_atoi(av[1]) > 1000) {
         printf("USAGE\n\t%s [0 < size <= 1000]\n", av[0]);
-        printf("\t'size' gives a spiral of side length 'size * 2 - 1'\n");
+        printf("\t'size' gives a (2*size-1) by (2*size-1) spiral\n");
         return (FAILURE);
     }
     size = my_atoi(av[1]) * 2 - 1;
