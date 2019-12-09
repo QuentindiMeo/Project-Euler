@@ -5,7 +5,6 @@
 ** main triangle
 */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "my.h"
@@ -35,8 +34,6 @@ static char *get_next_word(char *words)
     unsigned int end = cursor;
     char *word = NULL;
 
-    if (end > my_strlen(words))
-        return (NULL);
     for (; words[end] && words[end] != '\"'; end++);
     if (end > my_strlen(words))
         return (NULL);
@@ -55,10 +52,8 @@ static void triangle(char *words)
         word = get_next_word(words);
         if (!word)
             break;
-        usleep(1);
-        if (is_triangle(word)) {
+        if (is_triangle(word))
             res++;
-        }
         free(word);
     }
     printf("\nNumber of triangle words in \"p042_words.txt\": %d\n", res);
