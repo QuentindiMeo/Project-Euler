@@ -34,8 +34,10 @@ static char *get_next_word(char *words)
     unsigned int end = cursor;
     char *word = NULL;
 
+    if (end >= my_strlen(words))
+        return (NULL);
     for (; words[end] && words[end] != '\"'; end++);
-    if (end > my_strlen(words))
+    if (end >= my_strlen(words))
         return (NULL);
     end--;
     word = my_cut_str(words, cursor, end);
