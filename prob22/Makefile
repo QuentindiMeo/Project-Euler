@@ -9,8 +9,6 @@ SRC	=	main_nmscores.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-HEADER_PATH     =       include/
-
 CC	=	@gcc
 
 LIB	=	../libmy.a

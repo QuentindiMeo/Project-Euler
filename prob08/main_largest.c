@@ -46,19 +46,15 @@ static void largest_product(int digit)
         }
         free2(extract, mul);
     }
-    printf("Largest product in a %d series: %s\n", digit, biggest);
+    printf("Largest product in a %i series: %s\n", digit, biggest);
 }
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 0)) {
         printf("USAGE\n\t%s [x-digit series]\n", av[0]);
         return (FAILURE);
     }
-    if (atoi(av[1]) <= 0) {
-        printf("USAGE\n\t%s [x-digit series]\n", av[0]);
-        return (FAILURE);
-    }
-    largest_product(atoi(av[1]));
+    largest_product(my_atoi(av[1]));
     return (SUCCESS);
 }

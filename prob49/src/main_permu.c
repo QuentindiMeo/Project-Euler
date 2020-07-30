@@ -56,7 +56,6 @@ static void permu(void)
     for (; res < 10000; res++) {
         if (!my_is_prime(res))
             continue;
-//        printf("%d\n", res);
         t = condition_works(res);
         if (t)
             break;

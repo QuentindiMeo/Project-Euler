@@ -27,15 +27,11 @@ static void fibonacci_loop(int limit)
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 0)) {
         printf("USAGE\n\t./fib [limit]\n");
         return (FAILURE);
     }
-    if (my_atoi(av[1]) < 0) {
-        printf("USAGE\n\t./fib [limit]\n");
-        return (FAILURE);
-    }
-    if (my_getnbr(av[1]) == 0)
+    if (my_atoi(av[1]) == 0)
         printf("S0(even) = 0\n");
     fibonacci_loop(my_atoi(av[1]));
     return (SUCCESS);

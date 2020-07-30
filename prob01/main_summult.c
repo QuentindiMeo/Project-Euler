@@ -20,17 +20,13 @@ static void summult_loop(uint limit)
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 0)) {
         printf("USAGE\n\t./summult [limit]\n");
         return (FAILURE);
     }
-    if (my_atoi(av[1]) < 0) {
-        printf("USAGE\n\t./summult [limit]\n");
-        return (FAILURE);
-    }
-    if (my_getnbr(av[1]) == 0)
+    if (my_atoi(av[1]) == 0)
         printf("S0(3, 5) = 1\n");
     else
-        summult_loop(my_getnbr(av[1]));
+        summult_loop(my_atoi(av[1]));
     return (SUCCESS);
 }

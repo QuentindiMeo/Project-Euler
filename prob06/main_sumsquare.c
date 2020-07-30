@@ -27,11 +27,7 @@ int main(int ac, char **av)
     int i;
     int res;
 
-    if (ac != 2) {
-        printf("USAGE\n\t./sumsquare [x natural numbers]\n");
-        return (FAILURE);
-    }
-    if (my_atoi(av[1]) < 0) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 0)) {
         printf("USAGE\n\t./sumsquare [x natural numbers]\n");
         return (FAILURE);
     }

@@ -9,13 +9,9 @@ SRC	=	main_collatz.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
-HEADER_PATH     =       include/
-
 CC	=	@gcc
 
-LIB     =       ../libmy.a
-
-CFLAGS	=	-I $(HEADER_PATH) -Wall -Werror -Wextra --pedantic
+CFLAGS	=	-Wall -Werror -Wextra --pedantic
 
 NAME	=	collatz
 
@@ -25,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ) $(LIB)
+	$(CC) -o $(NAME) $(OBJ)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:

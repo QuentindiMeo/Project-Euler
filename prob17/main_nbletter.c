@@ -135,14 +135,10 @@ static int get_nbletter(int number)
     return (nbl);
 }
 
-static int nbletter(uint limit, char *bin)
+static int nbletter(uint limit)
 {
     uint res = 0;
 
-    if (limit > 1000) {
-        printf("USAGE\n\t%s [0 < limit <= 1000]\n", bin);
-        return (FAILURE);
-    }
     for (uint i = 1; i <= limit; i++)
         res += get_nbletter(i);
     printf("Number letter count for up to %d: %u\n", limit, res);
@@ -151,13 +147,13 @@ static int nbletter(uint limit, char *bin)
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 0)) {
         printf("USAGE\n\t%s [0 < limit <= 1000]\n", av[0]);
         return (FAILURE);
     }
-    if (my_atoi(av[1]) < 0) {
+    if (my_atoi(av[1]) > 1000) {
         printf("USAGE\n\t%s [0 < limit <= 1000]\n", av[0]);
         return (FAILURE);
     }
-    return (nbletter(my_atoi(av[1]), av[0]));
+    return (nbletter(my_atoi(av[1])));
 }

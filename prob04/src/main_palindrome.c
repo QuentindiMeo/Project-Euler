@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
+#include "my.h"
 
 int is_palindrome(char const *str);
 

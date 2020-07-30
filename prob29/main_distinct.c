@@ -59,7 +59,7 @@ static void distinct(int a_max, int b_max)
         free(tempa);
     }
     for (; results[res]; res++);
-    printf("Distinct terms: %d\n", res);
+    printf("Distinct terms: %i\n", res);
     free_array(results);
 }
 

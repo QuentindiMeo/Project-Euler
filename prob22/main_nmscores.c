@@ -24,7 +24,7 @@ static void sort(char ***arr)
 
     for (; (*arr)[size]; size++);
     for (int j = 0; j <= size; j++)
-        for (int i = 0; (*arr)[i + 1]; i++) {
+        for (int i = 0; (*arr)[i + 1]; i++)
             if (my_strcmp((*arr)[i], (*arr)[i + 1]) > 0) {
                 char *tmp = my_strdup((*arr)[i]);
 
@@ -33,7 +33,6 @@ static void sort(char ***arr)
                 free((*arr)[i + 1]);
                 (*arr)[i + 1] = tmp;
             }
-        }
 }
 
 static char *get_next_word(const char *words)

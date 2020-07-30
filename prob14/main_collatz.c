@@ -5,18 +5,15 @@
 ** collatz computer main
 */
 
+#include <stdio.h>
 #include "my.h"
 
 static uint collatz(uint n)
 {
     uint iter = 0;
 
-    for (; n > 1; iter++) {
-        if (n % 2)
-            n =  3 * n + 1;
-        else
-            n /= 2;
-    }
+    for (; n > 1; iter++)
+        n = (n % 2) ? 3 * n + 1 : n / 2;
     return (iter);
 }
 
@@ -30,10 +27,10 @@ int main(void)
         iter = collatz(i);
         if (max < iter) {
             max = iter;
-            my_putstr("New longest! ");my_putnbr(i);my_putchar('\n');
+            printf("New longest: %i\n", i);
             longest = i;
         }
     }
-    my_putstr("Longest chain under 1M: "); my_putnbr(longest);my_putchar('\n');
+    printf("Longest chain under 1M: %i\n", longest);
     return (SUCCESS);
 }

@@ -5,8 +5,8 @@
 ** palindrome main
 */
 
-#include "../include/my.h"
-#include "../include/palindrome.h"
+#include "my.h"
+#include "palindrome.h"
 
 static int is_letter(char const c)
 {
