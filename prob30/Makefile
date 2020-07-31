@@ -9,13 +9,11 @@ SRC	=	pow5.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
-HEADER_PATH     =       include/
-
 CC	=	@gcc
 
 LIB     =       ../libmy.a
 
-CFLAGS	=	-I $(HEADER_PATH) -Wall -Werror -Wextra --pedantic
+CFLAGS	=	-Wall -Werror -Wextra --pedantic
 
 NAME	=	pow5
 

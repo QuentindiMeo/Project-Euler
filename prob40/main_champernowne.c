@@ -11,9 +11,9 @@
 
 int main(void)
 {
-    int res = 1;
-    int cursor = 0;
-    int i = 1;
+    uint res = 1;
+    uint cursor = 0;
+    uint i = 1;
 
     for (; i < 10; i++)
         cursor += 1;
@@ -71,6 +71,6 @@ int main(void)
         }
         cursor += 6;
     }
-    printf("Result: %d\n", res);
+    printf("Result: %i\n", res);
     return (SUCCESS);
 }

@@ -9,19 +9,6 @@
 #include <stdio.h>
 #include "my.h"
 
-static char **my_arrdup2(char **arr, int size, char *added)
-{
-    char **dup = NULL;
-    int j = 0;
-
-    dup = malloc(sizeof(char *) * (size + 2));
-    for (; j < size; j++)
-        dup[j] = my_strdup(arr[j]);
-    dup[j] = my_strdup(added);
-    dup[j + 1] = NULL;
-    return (dup);
-}
-
 static char **add_result(char **results, char *result)
 {
     char **newresults = NULL;
@@ -59,7 +46,7 @@ static void distinct(int a_max, int b_max)
         free(tempa);
     }
     for (; results[res]; res++);
-    printf("Distinct terms: %i\n", res);
+    printf("Distinct terms: %d\n", res);
     free_array(results);
 }
 

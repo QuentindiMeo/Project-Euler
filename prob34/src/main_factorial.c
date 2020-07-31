@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
+#include "my.h"
 
 int my_compute_factorial_rec(int nb);
 
@@ -31,21 +31,16 @@ static int facto_loop(uint limit)
     int res = 0;
     uint nth = 3;
 
-    if (limit < 2) {
-        printf(" USAGE\n\t./factorial [max n to compute; n > 1]\n");
-        return (FAILURE);
-    }
-    for (; nth != limit + 1; nth++) {
+    for (; nth != limit + 1; nth++)
         if (is_digit_facto(nth))
             res += nth;
-    }
     printf("%cResult : %i\n", res ? '\n' : '\0', res);
     return (SUCCESS);
 }
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) < 2)) {
         printf(" USAGE\n\t./factorial [max n to compute; n > 1]\n");
         return (FAILURE);
     }

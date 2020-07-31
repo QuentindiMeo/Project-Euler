@@ -11,9 +11,9 @@
 
 int my_is_prime(int nb);
 
-static int eq(int *a, int *b)
+static int eq(int *a, int *b, int size)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < size; i++)
         if (a[i] != b[i])
             return (FALSE);
     return (TRUE);
@@ -31,7 +31,7 @@ static int is_permu(char *n1, char *n2, char *n3)
         a2[n2[i] - 48] = a2[n2[i] - 48] + 1;
     for (int i = 0; n3[i]; i++)
         a3[n3[i] - 48] = a3[n3[i] - 48] + 1;
-    if (eq(a1, a2) && eq(a1, a3)) {
+    if (eq(a1, a2, 10) && eq(a1, a3, 10)) {
         free3(n1, n2, n3);
         return (TRUE);
     }
@@ -60,8 +60,8 @@ static void permu(void)
         if (t)
             break;
     }
-    printf("Works for: %d - %d - %d, +%d\n", res, res + t, res + t + t, t);
-    printf("Answer is: %d%d%d\n", res, res + t, res + t + t);
+    printf("Works for: %i - %i - %i, +%i\n", res, res + t, res + t + t, t);
+    printf("Answer is: %i%i%i\n", res, res + t, res + t + t);
 }
 
 int main(void)

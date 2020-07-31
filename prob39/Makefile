@@ -9,8 +9,6 @@ SRC	=	main_pythagoras.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-INCLUDE	=	include/
-
 CC	=	@gcc -lm
 
 LIB     =       ../libmy.a
@@ -19,13 +17,11 @@ CFLAGS	=	-Wall -Werror -Wextra --pedantic
 
 NAME	=	pythagoras
 
-CPPFLAGS	=	-I $(INCLUDE)
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ) $(LIB) $(CPPFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(LIB)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:

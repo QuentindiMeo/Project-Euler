@@ -28,6 +28,7 @@ int my_atoi(char const *str);
 char *my_infinpow(char *n1, unsigned int n2);
 char *my_strdup(char const *src);
 unsigned int my_strlen(char const *str);
+char **my_arrdup2(char **arr, int size, char *to_add);
 int my_str_isinarray(char **array, char const *s);
 void free_array(char **array);
 char *my_itoa(int nb);

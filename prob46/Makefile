@@ -14,8 +14,6 @@ INCLUDE	=	include/
 
 CC	=	@gcc
 
-LIB     =       ../libmy.a
-
 CFLAGS	=	-Wall -Werror -Wextra --pedantic
 
 NAME	=	goldbach
@@ -26,7 +24,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ) $(LIB) $(CPPFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:

@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
+#include "my.h"
 
 int is_palindrome(char const *str);
 
@@ -29,13 +29,13 @@ static char *dec_to_bin(unsigned int dec)
     return (bin);
 }
 
-static void palindrome(int limit)
+static void palindrome(uint limit)
 {
-    int res = 0;
+    uint res = 0;
     char *tempdec = NULL;
     char *tempbin = NULL;
 
-    for (int i = 1; i < limit; i++) {
+    for (uint i = 1; i < limit; i++) {
         tempdec = my_itoa(i);
         if (is_palindrome(tempdec)) {
             tempbin = dec_to_bin(i);
@@ -48,7 +48,7 @@ static void palindrome(int limit)
         }
         free(tempdec);
     }
-    printf("%cS(palindromic(n, 10, 2)) with n < %d: %d\n",
+    printf("%cS(palindrome(n, 10, 2)) with n < %d: %d\n",
            res ? '\n' : '\0', limit, res);
 }
 

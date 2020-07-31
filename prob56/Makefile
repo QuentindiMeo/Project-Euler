@@ -10,23 +10,23 @@ SRC	=	src/my_infinmul.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-HEADER_PATH     =       include/
+INCLUDE	=	include/
 
 CC	=	@gcc
 
 LIB     =       ../libmy.a
 
-CFLAGS	=	-I $(HEADER_PATH) -Wall -Werror -Wextra --pedantic
+CFLAGS	=	-Wall -Werror -Wextra --pedantic
 
 NAME	=	aexpb
 
-.PHONY: clean fclean re aexpb
+CPPFLAGS	=	-I $(INCLUDE)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ) $(LIB)
+	$(CC) -o $(NAME) $(OBJ) $(LIB) $(CPPFLAGS)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:
@@ -38,3 +38,5 @@ fclean:	clean
 	@echo Cleaned \'$(NAME)\'
 
 re: fclean all
+
+.PHONY: clean fclean re aexpb

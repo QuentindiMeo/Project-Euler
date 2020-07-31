@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
+#include "my.h"
 
 int my_is_prime(int nb);
 
@@ -19,11 +19,11 @@ static int check_right(uint nth)
     for (uint i = 0; nb[i]; i++) {
         tmp = my_cut_str(nb, 0, my_strlen(nb) - i - 1);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp ? tmp : NULL, nb ? nb : NULL);
+            free2(tmp, nb);
             return (FALSE);
         }
     }
-    free2(tmp ? tmp : NULL, nb ? nb : NULL);
+    free2(tmp, nb);
     return (TRUE);
 }
 
@@ -35,11 +35,11 @@ static int check_left(uint nth)
     for (uint i = 0; nb[i]; i++) {
         tmp = my_cut_str(nb, i, my_strlen(nb) - 1);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp ? tmp : NULL, nb ? nb : NULL);
+            free2(tmp, nb);
             return (FALSE);
         }
     }
-    free2(tmp ? tmp : NULL, nb ? nb : NULL);
+    free2(tmp, nb);
     return (TRUE);
 }
 
@@ -50,17 +50,15 @@ static void prime_loop(void)
     uint nth = 10;
 
     for (; count < 11 && nth < 4000000000; nth++) {
-        if (my_is_prime(nth)) {
-            if (check_left(nth) && check_right(nth)) {
-                printf("Works for %u\n", nth);
-                count++;
-                res += nth;
-            }
+        if (my_is_prime(nth) && check_left(nth) && check_right(nth)) {
+            printf("Works for %u\n", nth);
+            count++;
+            res += nth;
         }
-        if (nth == 100000)
+        if (nth == 70000)
             nth = 700000;
     }
-    printf("\nResult : %i\n", res);
+    printf("\nResult: %i\n", res);
 }
 
 int main(void)

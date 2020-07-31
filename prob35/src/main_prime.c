@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
+#include "my.h"
 
 int my_is_prime(int nb);
 
@@ -32,19 +32,19 @@ static int check_circular(uint nth)
     for (uint i = 0; nb[i]; i++) {
         tmp = rotate_nb(tmp);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp ? tmp : NULL, nb ? nb : NULL);
+            free2(tmp, nb);
             return (FALSE);
         }
     }
-    free2(tmp ? tmp : NULL, nb ? nb : NULL);
+    free2(tmp, nb);
     printf("%u is \033[1mcircular\033[0m\n", nth);
     return (TRUE);
 }
 
 static void prime_loop(void)
 {
-    int res = 0;
-    uint nth = 2;
+    uint res = 0;
+    int nth = 2;
 
     for (; nth < 1000000; nth++) {
         if (my_is_prime(nth))

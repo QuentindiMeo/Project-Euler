@@ -21,7 +21,7 @@ static int is_triangle(char *word)
     for (int n = 1; n < 50; n++) {
         triangle = n * (n + 1) / 2;
         if (triangle == wordval) {
-            printf("%s is a triangle word\n", word);
+            printf("%s is a triangle word.\n", word);
             return (YES);
         }
     }
@@ -58,7 +58,7 @@ static void triangle(char *words)
             res++;
         free(word);
     }
-    printf("\nNumber of triangle words in \"p042_words.txt\": %d\n", res);
+    printf("\nNumber of triangle words in \"p042_words.txt\": %i\n", res);
 }
 
 int main(void)
