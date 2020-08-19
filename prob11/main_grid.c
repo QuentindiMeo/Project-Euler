@@ -17,8 +17,7 @@ static int diagonal_r(void)
     for (uint i = 0; i < 17; i++)
         for (uint j = 0; j < 17; j++) {
             t = g[i][j] * g[i + 1][j + 1] * g[i + 2][j + 2] * g[i + 3][j + 3];
-            if (biggest < t)
-                biggest = t;
+            biggest = (biggest < t ? t : biggest);
         }
     return (biggest);
 }
@@ -32,8 +31,7 @@ static int diagonal_l(void)
     for (uint i = 0; i < 17; i++)
         for (uint j = 3; j < 20; j++) {
             t = g[i][j] * g[i + 1][j - 1] * g[i + 2][j - 2] * g[i + 3][j - 3];
-            if (biggest < t)
-                biggest = t;
+            biggest = (biggest < t ? t : biggest);
         }
     return (biggest);
 }
@@ -47,8 +45,7 @@ static int vertical(void)
     for (uint i = 0; i < 17; i++)
         for (uint j = 0; j < 20; j++) {
             t = g[i][j] * g[i + 1][j] * g[i + 2][j] * g[i + 3][j];
-            if (biggest < t)
-                biggest = t;
+            biggest = (biggest < t ? t : biggest);
         }
     return (biggest);
 }
@@ -62,8 +59,7 @@ static int horizontal(void)
     for (uint i = 0; i < 20; i++)
         for (uint j = 0; j < 17; j++) {
             t = g[i][j] * g[i][j + 1] * g[i][j + 2] * g[i][j + 3];
-            if (biggest < t)
-                biggest = t;
+            biggest = (biggest < t ? t : biggest);
         }
     return (biggest);
 }

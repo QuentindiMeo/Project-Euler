@@ -65,14 +65,14 @@ static void nscores(const char *words)
             break;
         tmp = arr;
         arr = my_arrdup2(tmp, i, word);
-        free_array(tmp);
+        free_str_array(tmp);
         free(word);
     }
     sort(&arr);
     for (int loop = 1; arr[loop - 1]; loop++)
         res += score(arr[loop - 1], loop);
     printf("Total score of the names in \"p042_names.txt\": %li\n", res);
-    free_array(arr);
+    free_str_array(arr);
 }
 
 int main(void)

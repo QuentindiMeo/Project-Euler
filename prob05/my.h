@@ -11,8 +11,6 @@
 typedef enum {
     SUCCESS = 0,
     FAILURE = 84,
-    TRUE = 1,
-    FALSE = 0,
 } return_values_t;
 
 #endif

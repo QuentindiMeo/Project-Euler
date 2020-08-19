@@ -13,8 +13,7 @@ static void summult_loop(uint limit)
     int res = 0;
 
     for (uint i = 0; i < limit; i++)
-        if (i % 3 == 0 || i % 5 == 0)
-            res += i;
+        res += (i * (i % 3 == 0 || i % 5 == 0));
     printf("S%d(3, 5) = %i\n", limit, res);
 }
 

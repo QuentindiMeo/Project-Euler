@@ -16,8 +16,7 @@ static int get_divisors(uint triangle)
     if (triangle < 75000000 || triangle % 4)
         return (0);
     for (long i = 1; i <= triangle; i++)
-        if (triangle % i == 0)
-            divisors++;
+        divisors += (triangle % i == 0);
     if (divisors >= 350)
         printf("%i = %d\n", triangle, divisors);
     return (divisors);
@@ -27,11 +26,8 @@ static void hdtn(int limit)
 {
     uint triangle = 0;
 
-    for (uint i = 1; i; i++) {
+    for (uint i = 1; i && get_divisors(triangle) <= limit; i++)
         triangle += i;
-        if (get_divisors(triangle) > limit)
-            break;
-    }
     printf("1st triangle number to have %d+ divisors: %i\n", limit, triangle);
 }
 

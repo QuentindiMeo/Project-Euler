@@ -23,7 +23,7 @@ static char **add_result(char **results, char *result)
     if (!my_str_isinarray(results, result)) {
         for (; results[size]; size++);
         newresults = my_arrdup2(results, size, result);
-        free_array(results);
+        free_str_array(results);
         return (newresults);
     }
     return (results);
@@ -47,7 +47,7 @@ static void distinct(int a_max, int b_max)
     }
     for (; results[res]; res++);
     printf("Distinct terms: %d\n", res);
-    free_array(results);
+    free_str_array(results);
 }
 
 int main(int ac, char **av)
