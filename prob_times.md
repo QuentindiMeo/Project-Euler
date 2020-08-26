@@ -9,9 +9,9 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 4   -> solved in 116 ms.
 - Problem 5   -> solved in 65  ms.
 - Problem 6   -> solved in 2.7 ms.
-- Problem 8   -> solved in **BROKEN!!!*
+- Problem 8   -> solved in **BROKEN!!!**
 - Problem 9   -> solved in 194 ms.
-- Problem 10  -> solved in **540  s!!!*
+- Problem 10  -> solved in **540  s!!!**
 - Problem 11  -> solved in 1   ms.
 - Problem 12  -> solved in 24.2 s.
 - Problem 13  -> solved in 34  ms.
@@ -21,11 +21,11 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 21  -> solved in 307 ms.
 - Problem 22  -> solved in 4.82 s.
 - Problem 28  -> solved in 1   ms.
-- Problem 29  -> solved in **BROKEN!!!*
+- Problem 29  -> solved in **BROKEN!!!**
 - Problem 30  -> solved in 102 ms.
 - Problem 33  -> solved in 3.6 ms.
-- Problem 34  -> solved in 15  ms.
-- Problem 35  -> solved in **89   s!!!*
+- Problem 34  -> solved in 14  ms.
+- Problem 35  -> solved in **75.4 s!!!**
 - Problem 36  -> solved in 235 ms.
 - Problem 37  -> solved in 22.7 s.
 - Problem 39  -> solved in 1.39 s.

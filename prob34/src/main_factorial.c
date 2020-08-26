@@ -32,8 +32,7 @@ static int facto_loop(uint limit)
     uint nth = 3;
 
     for (; nth != limit + 1; nth++)
-        if (is_digit_facto(nth))
-            res += nth;
+        res += nth * is_digit_facto(nth);
     printf("%cResult : %i\n", res ? '\n' : '\0', res);
     return (SUCCESS);
 }

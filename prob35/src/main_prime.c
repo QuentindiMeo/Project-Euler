@@ -47,7 +47,7 @@ static void prime_loop(void)
     int nth = 2;
 
     for (; nth < 1000000; nth++) {
-        if (my_is_prime(nth) && check_circular(nth))
+        if (nth % 2 && my_is_prime(nth) && check_circular(nth))
             res++;
         if (nth == 200000)
             nth = 300000;
