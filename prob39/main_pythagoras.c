@@ -25,13 +25,14 @@ static void pythagoras(uint limit)
     uint max = 0;
     int sol = 0;
 
-    for (uint i = 1; i < limit; i++)
-        if (sol < get_solutions(i)) {
+    for (uint i = 1; i < limit; i++) {
+        if (i % 4 == 0 && sol < get_solutions(i)) {
             sol = get_solutions(i);
             max = i;
-            printf("New maximum: %d with %d solution%s.\n", max, sol,
+            printf("New maximum: %i with %i solution%s.\n", max, sol,
                    sol > 1 ? "s" : "");
         }
+    }
 }
 
 int main(int ac, char **av)
