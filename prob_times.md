@@ -20,6 +20,7 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 20  -> solved in 14  ms.
 - Problem 21  -> solved in 307 ms.
 - Problem 22  -> solved in 4.82 s.
+- Problem 22  -> solved in **211  s!!!**
 - Problem 28  -> solved in 1   ms.
 - Problem 29  -> solved in **BROKEN!!!**
 - Problem 30  -> solved in 102 ms.
