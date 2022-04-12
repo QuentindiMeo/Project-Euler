@@ -11,9 +11,8 @@
 
 static int is_pandig(int *prods, int sz)
 {
-    int count[9];
+    int count[9] = {0,0,0,0,0,0,0,0,0};
 
-    for (int i = 0; i < 9; i++) count[i] = 0;
     for (int i = 0; i < sz; i++) {
         for (; prods[i]; prods[i] /= 10) {
             if (prods[i] % 10 == 0) return FALSE;
@@ -54,10 +53,10 @@ static int get_size(int nb)
 static int pandigital(void)
 {
     int max = 0;
-    int sz = 0, len = 0;
+    int sz  = 0, len = 0;
     int *prods = NULL;
 
-    for (int i = 9; i < 50000; i++) {
+    for (int i = 9; i < 9999; i++) {
         for (int a = 1; len < 9; a++) {
             prods = push_back(prods, sz, i * a);
             len  += get_size(i * a); sz++;
