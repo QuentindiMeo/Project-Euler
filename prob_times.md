@@ -26,6 +26,7 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 28  -> solved in 1   ms.
 - Problem 29  -> solved in **BROKEN!!!**
 - Problem 30  -> solved in 102 ms.
+- Problem 32  -> solved in 87  ms.
 - Problem 33  -> solved in 3.6 ms.
 - Problem 34  -> solved in 14  ms.
 - Problem 35  -> solved in 4.06 s.
