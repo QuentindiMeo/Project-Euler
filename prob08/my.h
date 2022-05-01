@@ -24,7 +24,6 @@ typedef enum {
 typedef	unsigned int uint;
 typedef	unsigned char uchar;
 
-void free2(char *s1, char *s2);
 int my_atoi(char const *str);
 int my_strcmpi(char const *s1, char const *s2);
 char *my_infinmul(char *n1, char *n2);

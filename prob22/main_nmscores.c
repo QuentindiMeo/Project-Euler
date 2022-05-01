@@ -15,7 +15,7 @@ static int score(const char *word, const int n)
 
     for (int i = 0; word[i]; i++)
         nb += (word[i] - 64);
-    return (nb * n);
+    return nb * n;
 }
 
 static void sort(char ***arr)
@@ -42,14 +42,14 @@ static char *get_next_word(const char *words)
     char *word = NULL;
 
     if (end >= my_strlen(words))
-        return (NULL);
+        return NULL;
     for (; words[end] && words[end] != '\"'; end++);
     if (end >= my_strlen(words))
-        return (NULL);
+        return NULL;
     end--;
     word = my_cut_str(words, cursor, end);
     cursor = end + 4;
-    return (word);
+    return word;
 }
 
 static void nscores(const char *words)
@@ -61,8 +61,7 @@ static void nscores(const char *words)
 
     for (int i = 0; 1; i++) {
         word = get_next_word(words);
-        if (!word)
-            break;
+        if (!word) break;
         tmp = arr;
         arr = my_arrdup2(tmp, i, word);
         free_str_array(tmp);
@@ -83,12 +82,12 @@ int main(void)
 
     if (!stream) {
         printf("\"p022_names.txt\" couldn't be opened. Check you have it.\n");
-        return (FAILURE);
+        return FAILURE;
     }
     if (getline(&words, &buf, stream) == ERROR)
-        return (FAILURE);
+        return FAILURE;
     fclose(stream);
     nscores(words);
     free(words);
-    return (SUCCESS);
+    return SUCCESS;
 }

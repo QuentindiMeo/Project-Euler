@@ -19,12 +19,12 @@ static int check_right(uint nth)
     for (uint i = 0; nb[i]; i++) {
         tmp = my_cut_str(nb, 0, my_strlen(nb) - i - 1);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp, nb);
-            return (FALSE);
+            free(tmp); free(nb);
+            return FALSE;
         }
     }
-    free2(tmp, nb);
-    return (TRUE);
+    free(tmp); free(nb);
+    return TRUE;
 }
 
 static int check_left(uint nth)
@@ -35,15 +35,15 @@ static int check_left(uint nth)
     for (uint i = 0; nb[i]; i++) {
         tmp = my_cut_str(nb, i, my_strlen(nb) - 1);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp, nb);
-            return (FALSE);
+            free(tmp); free(nb);
+            return FALSE;
         }
     }
-    free2(tmp, nb);
-    return (TRUE);
+    free(tmp); free(nb);
+    return TRUE;
 }
 
-static void prime_loop(void)
+static int prime_loop(void)
 {
     int count = 0;
     int res = 0;
@@ -59,10 +59,10 @@ static void prime_loop(void)
             nth = 700000;
     }
     printf("\nResult: %i\n", res);
+    return SUCCESS;
 }
 
 int main(void)
 {
-    prime_loop();
-    return (SUCCESS);
+    return prime_loop();
 }

@@ -24,7 +24,7 @@ static void facto_loop(uint limit)
         nb = my_infinmul(res, nthh);
         free(res);
         res = my_strdup(nb);
-        free2(nthh, nb);
+        free(nthh); free(nb);
     }
     for (uint i = 0; i < my_strlen(res); i++)
         ress += (res[i] - 48);

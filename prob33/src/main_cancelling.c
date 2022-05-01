@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "my.h"
 
 double case4(const char *s, const char *t);
@@ -40,19 +41,19 @@ static int cancellable(int i, int j)
     char *t = my_itoa(j);
 
     if (s[0] == t[0] && case1(s, t) == (double) i / j) {
-        free2(s, t); return (TRUE);
+        free(s); free(t); return TRUE;
     }
     if (s[my_strlen(s) - 1] == t[my_strlen(t) - 1] &&
         s[my_strlen(s) - 1] != '0' && case2(s, t) == (double) i / j) {
-        free2(s, t); return (TRUE);
+        free(s); free(t); return TRUE;
     }
     if (s[0] == t[my_strlen(t) - 1] && case3(s, t) == (double) i / j) {
-        free2(s, t); return (TRUE);
+        free(s); free(t); return TRUE;
     }
     if (s[my_strlen(s) - 1] == t[0] && case4(s, t) == (double) i / j) {
-        free2(s, t); return (TRUE);
+        free(s); free(t); return TRUE;
     }
-    free2(s, t); return (FALSE);
+    free(s); free(t); return FALSE;
 }
 
 static return_values_t cancelling(void)
@@ -70,10 +71,10 @@ static return_values_t cancelling(void)
             }
     print_res(a[0][NUMER] * a[1][NUMER] * a[2][NUMER] * a[3][NUMER],
               a[0][DENOM] * a[1][DENOM] * a[2][DENOM] * a[3][DENOM]);
-    return (SUCCESS);
+    return SUCCESS;
 }
 
 int main(void)
 {
-    return (cancelling());
+    return cancelling();
 }

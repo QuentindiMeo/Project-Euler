@@ -13,10 +13,18 @@
 typedef enum {
     SUCCESS = 0,
     FAILURE = 84,
+    TRUE = 1,
+    FALSE = 0,
+    YES = 1,
+    NO = 0,
     ERROR = -1,
+    END_OF_FILE = -1,
+    END_OF_ARGS = -1,
+    CTRLD = -1,
 } return_values_t;
 
 typedef	unsigned int uint;
+typedef	unsigned char uchar;
 
 unsigned int my_strlen(const char *str);
 void free_str_array(char **array);

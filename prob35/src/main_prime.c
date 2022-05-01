@@ -32,12 +32,11 @@ static int check_circular(int nth)
     for (int i = 0; nb[i]; i++) {
         tmp = rotate_nb(tmp);
         if (!my_is_prime(my_atoi(tmp))) {
-            free2(tmp, nb);
+            free(tmp); free(nb);
             return FALSE;
         }
     }
-    free2(tmp, nb);
-    printf("%i\n", nth);
+    free(tmp); free(nb);
     return TRUE;
 }
 
@@ -53,7 +52,6 @@ static int is_in(int i, int n)
     free(num);
     return FALSE;
 }
-
 static int quick_filter(int nth)
 {
     if (nth < 10) return TRUE;

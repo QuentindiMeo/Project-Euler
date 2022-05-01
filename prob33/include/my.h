@@ -17,7 +17,6 @@ typedef enum {
 
 typedef	unsigned int uint;
 
-void free2(char *s1, char *s2);
 unsigned int my_strlen(char const *str);
 char *my_cut_str(char const *s, int const idx_start, int const idx_end);
 int my_atoi(char const *str);

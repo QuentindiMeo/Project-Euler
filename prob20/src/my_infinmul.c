@@ -10,7 +10,7 @@
 unsigned short my_str_isnum(char const *str);
 char *my_utoa(unsigned int nb);
 char *my_strcpy(char *dest, char const *src);
-char *my_revstr(char *str);
+char *my_evil_str(const char *str);
 int ctoi(char const c);
 char itoc(int const i);
 int my_getnbr(char const *str);
@@ -88,14 +88,14 @@ char *my_infinmul(char *n1, char *n2)
         return (NULL);
     if (my_strlen(n1) + my_strlen(n2) < 10)
         return (my_utoa(my_getnbr(n1) * my_getnbr(n2)));
-    my_revstr(n1);
-    my_revstr(n2);
+    my_evil_str(n1);
+    my_evil_str(n2);
     for (uint i = 0; n2[i]; i++) {
         free(tmp ? tmp : NULL);
         tmp = get_temp(n1, ctoi(n2[i]), i);
         res = add_up(res, tmp);
     }
     free(tmp ? tmp : NULL);
-    my_revstr(res);
+    my_evil_str(res);
     return (res);
 }
