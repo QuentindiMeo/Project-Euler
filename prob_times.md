@@ -44,6 +44,7 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 49  -> solved in 2.70 s.
 - Problem 56  -> solved in 25.7 s.
 - Problem 92  -> solved in 9.41 s.
+- Problem 206 -> solved in 8.6  s.
 
 Just know I haven't tried to max them all out yet,    these scores might improve
 when I go on to work on them again (and yes, I know they're not supposed to take
