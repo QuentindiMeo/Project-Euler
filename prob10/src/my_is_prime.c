@@ -5,17 +5,12 @@
 ** my_is_prime
 */
 
+#include "my.h"
+
 int my_is_prime(int nb)
 {
-    int div = 0;
+    int nbb = 2, max = my_sqrt(nb);
 
-    if (nb <= 1)
-        return (0);
-    for (int nbb = 1; nbb <= nb; nbb++) {
-        if (nb % nbb == 0)
-            div++;
-        if (div > 2)
-            return (0);
-    }
-    return (1);
+    for (; nbb <= max && nb % nbb != 0; nbb++);
+    return --nbb == max;
 }

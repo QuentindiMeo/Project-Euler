@@ -10,6 +10,8 @@ SRC	=	src/my_is_prime.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
+LIB	=	../libmy.a
+
 INCLUDE	=	include/
 
 CC	=	@gcc
@@ -24,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(LIB) $(CPPFLAGS)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:

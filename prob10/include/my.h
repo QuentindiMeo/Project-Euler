@@ -13,4 +13,6 @@ typedef enum {
     FAILURE = 84,
 } return_values_t;
 
+int my_sqrt(const unsigned int n);
+
 #endif
