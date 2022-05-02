@@ -1,7 +1,7 @@
 As said in the README file,  while some problems are solved within milliseconds,
 some of them might require more time. Remember some features take more time in C
 than other languages!   Here is the FULL execution time for each of the problems
-you will find in the repo (average of 10 executions if < 10 seconds):
+you will find in the repo (average of 10 executions if < 60 seconds):
 
 - Problem 1   -> solved in 1.2 ms.
 - Problem 2   -> solved in 1   ms.
@@ -9,7 +9,7 @@ you will find in the repo (average of 10 executions if < 10 seconds):
 - Problem 4   -> solved in 116 ms.
 - Problem 5   -> solved in 65  ms.
 - Problem 6   -> solved in 2.7 ms.
-- Problem 8   -> solved in **BROKEN!!!**
+- Problem 8   -> solved in 12  ms.
 - Problem 9   -> solved in 194 ms.
 - Problem 10  -> solved in 7.85 s.
 - Problem 11  -> solved in 1   ms.
