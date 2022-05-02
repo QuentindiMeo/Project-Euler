@@ -8,15 +8,16 @@
 #ifndef MY_H_
 #define MY_H_
 
+#include <stdbool.h>
+
 typedef enum {
     SUCCESS = 0,
     FAILURE = 84,
-    TRUE = 1,
-    FALSE = 0,
 } return_values_t;
 
 typedef	unsigned int uint;
 
+bool my_is_prime(const int n);
 int my_atoi(const char * const s);
 
 #endif
