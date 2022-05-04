@@ -5,47 +5,33 @@
 ** main factorial computer
 */
 
-#include <unistd.h>
-#include <string.h>
+//#include <unistd.h>
+//#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/my.h"
-
-char *my_infinmul(char *n1, char *n2);
-
-static char *my_infinpow(uint a, uint b)
-{
-    char *tempa = my_utoa(a);
-    char *tempres = NULL;
-    char *res = NULL;
-
-    for (uint i = 0; i < b; i++) {
-        tempres = my_infinmul(i ? res : tempa, tempa);
-        free(res);
-        res = my_strdup(tempres);
-        free(tempres);
-    }
-    free(tempa);
-    return (res);
-}
+#include "my.h"
 
 static void aexp_loop(uint limit)
 {
-    int max = 0;
-    int tempmax = 0;
-    char *res = NULL;
+    int max = 0, tempmax = 0;
+    char *res = NULL, *tmp = NULL;
 
-    for (uint i = 1; i < limit; i++)
-        for (uint j = 1; j < 100; j++) {
-            res = my_infinpow(i, j);
+    for (uint i = 1; i < limit; i++) {
+        if (i % 10 == 0) continue;
+        tmp = my_utoa(i);
+        for (uint j = 1; j < limit; j++, tempmax = 0) {
+            res = my_infinpow(tmp, j);
             for (uint k = 0; res[k]; k++)
                 tempmax += ctoi(res[k]);
             if (max < tempmax) {
                 printf("New record: S(%u^%u) = %i\n", i, j, tempmax);
                 max = tempmax;
             }
-            tempmax = 0;
+            if (i + 1 != limit && j + 1 != limit)
+                free(res);
         }
+        free(tmp);
+    }
     for (uint i = 0; res[i]; i++)
         tempmax += ctoi(res[i]);
     free(res);
@@ -64,5 +50,5 @@ int main(int ac, char **av)
         printf("0! = 1\n\nSum of the digits of 0! : 1\n");
     else
         aexp_loop(my_atoi(av[1]));
-    return (SUCCESS);
+    return SUCCESS;
 }

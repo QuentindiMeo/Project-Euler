@@ -5,9 +5,11 @@
 ## Makefile
 ##
 
-SRC	=	main_collatz.c		\
+SRC	=	main_collatz.c
 
 OBJ	=	$(SRC:.c=.o)
+
+LIB	=	../libmy.a
 
 CC	=	@gcc
 
@@ -21,7 +23,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo Compiling \'$(NAME)\'
-	$(CC) -o $(NAME) $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(LIB)
 	@echo \'$(NAME)\' compiled successfully
 
 clean:

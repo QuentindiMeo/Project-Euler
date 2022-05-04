@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "my.h"
 
-int is_palindrome(char const *str);
+int is_palindrome(const char *str);
 
 static char *dec_to_bin(unsigned int dec)
 {
@@ -18,7 +18,7 @@ static char *dec_to_bin(unsigned int dec)
     unsigned int ten_pow = 0;
 
     if (!bin)
-        return (my_strdup("0\0"));
+        return my_strdup("0");
     for (; dec > 0; ten_pow++) {
         temp = dec % 2;
         dec /= 2;
@@ -26,14 +26,13 @@ static char *dec_to_bin(unsigned int dec)
     }
     bin[ten_pow] = 0;
     my_revstr(bin);
-    return (bin);
+    return bin;
 }
 
-static void palindrome(uint limit)
+static int palindrome(uint limit)
 {
     uint res = 0;
-    char *tempdec = NULL;
-    char *tempbin = NULL;
+    char *tempdec = NULL, *tempbin = NULL;
 
     for (uint i = 1; i < limit; i++) {
         tempdec = my_itoa(i);
@@ -48,20 +47,16 @@ static void palindrome(uint limit)
         }
         free(tempdec);
     }
-    printf("%cS(palindrome(n, 10, 2)) with n < %d: %d\n",
-           res ? '\n' : '\0', limit, res);
+    printf("%sS(palindrome(n, 10, 2)) with n < %d: %d\n",
+           res ? "\n" : "", limit, res);
+    return SUCCESS;
 }
 
 int main(int ac, char **av)
 {
-    if (ac != 2) {
+    if (ac != 2 || (ac == 3 && (my_atoi(av[1]) <= 0 || my_atoi(av[1]) > 1000000000))) {
         printf("USAGE\n\t%s [0 < limit <= 1000000000]\n", av[0]);
-        return (FAILURE);
+        return FAILURE;
     }
-    if (my_atoi(av[1]) <= 0 || my_atoi(av[1]) > 1000000000) {
-        printf("USAGE\n\t%s [0 < limit <= 1000000000]\n", av[0]);
-        return (FAILURE);
-    }
-    palindrome(my_atoi(av[1]));
-    return (SUCCESS);
+    return palindrome(my_atoi(av[1]));
 }

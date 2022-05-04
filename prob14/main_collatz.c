@@ -14,23 +14,29 @@ static uint collatz(uint n)
 
     for (; n > 1; iter++)
         n = (n % 2) ? 3 * n + 1 : n / 2;
-    return (iter);
+    return iter;
 }
 
-int main(void)
+static int chain(int limit)
 {
-    uint iter = 0;
-    uint max = 0;
-    uint longest = 0;
+    uint iter = 0, max = 0, longest = 0;
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < limit; i++) {
         iter = collatz(i);
         if (max < iter) {
             max = iter;
-            printf("New longest: %i\n", i);
             longest = i;
         }
     }
-    printf("Longest chain under 1M: %i\n", longest);
-    return (SUCCESS);
+    printf("Longest chain under %i: %i\n", limit, longest);
+    return SUCCESS;
+}
+
+int main(int ac, char **av)
+{
+    if (ac != 2 || (ac == 2 && my_atoi(av[1]) > 50000000)) {
+        printf("USAGE\n\t./%s [limit <= 50000000]\n", av[0]);
+	return FAILURE;
+    }
+    return chain(my_atoi(av[1]));
 }

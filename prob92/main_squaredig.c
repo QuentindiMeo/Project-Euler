@@ -19,7 +19,7 @@ static int squaredig(int num)
         for (uint i = 0; number[i]; i++)
             tempres += my_compute_power_rec(ctoi(number[i]), 2);
     }
-    return (tempres);
+    return tempres;
 }
 
 int main(void)
@@ -27,8 +27,7 @@ int main(void)
     uint res = 0;
 
     for (uint i = 2; i < 10000000; i++)
-        if (squaredig(i) == 89)
-            res++;
+        res += (squaredig(i) == 89);
     printf("%i numbers arrive at 89 below 10M.\n", res);
     return (SUCCESS);
 }

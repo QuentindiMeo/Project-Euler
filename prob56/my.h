@@ -16,6 +16,7 @@ typedef enum {
 typedef	unsigned int uint;
 typedef	unsigned char uchar;
 
+char *my_infinpow(char *a, uint b);
 char *my_strdup(char const *src);
 char *my_utoa(unsigned int nb);
 int my_atoi(char const *str);

@@ -15,4 +15,6 @@ typedef enum {
 
 typedef	unsigned int uint;
 
+int my_atoi(const char *s);
+
 #endif

@@ -5,8 +5,7 @@
 ## Makefile
 ##
 
-SRC	=	src/my_infinmul.c	\
-		src/main_aexpb.c	\
+SRC	=	main_aexpb.c
 
 OBJ	=	$(SRC:.c=.o)
 
