@@ -16,6 +16,7 @@ you will find in the repo (average of 10 executions if < 60 seconds):
 - Problem 12  -> solved in 24.2 s.
 - Problem 13  -> solved in 6   ms.
 - Problem 14  -> solved in 684 ms.
+- Problem 15  -> solved in 4   ms.
 - Problem 17  -> solved in 1   ms.
 - Problem 19  -> solved in 5   ms.
 - Problem 20  -> solved in 14  ms.
@@ -42,6 +43,7 @@ you will find in the repo (average of 10 executions if < 60 seconds):
 - Problem 45  -> solved in 28.8 s.
 - Problem 46  -> solved in 343 ms.
 - Problem 49  -> solved in 2.70 s.
+- Problem 50  -> solved in 3.83 s.
 - Problem 56  -> solved in 25.7 s.
 - Problem 92  -> solved in 7.84 s.
 - Problem 206 -> solved in 15  ms.
