@@ -26,7 +26,7 @@ static uint addfac(int tmpi, int *fax)
     return res;
 }
 
-/* allocating one more int to check whether it repeats EXACTLY x times. */
+/* allocating one more int to check whether it repeats after EXACTLY x values. */
 
 static bool matches_pattern(uint n, uint repeat)
 {
