@@ -11,7 +11,7 @@
 </div>
 <div align="center">
     <img alt="GitHub repository size" src="https://img.shields.io/github/languages/code-size/QuentindiMeo/Project-Euler?color=blue&logo=frontify" />
-    <img alt="GitHub issues" src="https://img.shields.io/github/issues/QuentindiMeo/Project-Euler?color=green&logo=target" />
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/QuentindiMeo/Project-Euler?color=forestgreen&logo=target" />
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/QuentindiMeo/Project-Euler?color=red&logo=stackedit" />
     <img alt="Lines of code" src="https://tokei.rs/b1/github/QuentindiMeo/Project-Euler?category=code" />
 </div>
@@ -22,7 +22,8 @@
 **Welcome to my Project Euler repository!**  
 
 Here lie my programs to have successfully solved [**Project Euler**](http://projecteuler.net) problems in C.  
-You may notice **libmy.a** at the root of this repository; it is a static library containing a variety of utility functions. Which of these functions that are used by each problem, is specified in their **my.h** file).
+You may notice a **libmy.a** file at the root of this repository; it is a static library containing a variety of utility functions that I compiled. Which of these functions are used by each problem, is specified in their **my.h** file).  
+*Who knows, maybe one day I'll make a huge unit testing file scanning all of the problems and flex my coverage...*
 
 > [!TIP]  
 > Because the <b>one-minute rule</b> may not always be respected, I put my program's execution times in [**prob_times.md**](/prob_times.md).
@@ -32,8 +33,6 @@ You may notice **libmy.a** at the root of this repository; it is a static librar
   
 > [!NOTE]
 > Feel free to report any bug or error concerning a solution by [**opening an issue**](https://github.com/QuentindiMeo/Project-Euler/issues).
-  
-*Who knows, maybe one day I'll make a huge unit testing file...*
 
 &#xa0;
 
